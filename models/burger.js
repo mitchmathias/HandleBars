@@ -9,20 +9,17 @@ var burger = {
         });
     },
     //variables cols and vals are arrays
-    create: function (cols, vals, cb) {
-        orm.create("burgers", cols, vals, function (res) {
+    insertOne: function (cols, vals, cb) {
+        orm.insertOne("burgers", cols, vals, function (res) {
             cb(res);
         });
     },
-    update: function (objColVals, conditon, cb) {
-        orm.update("burgers", objColVals, conditon, cb, function (res) {
+    updateOne: function (objColVals, conditon, cb) {
+        orm.updateOne("burgers", objColVals, conditon, cb, function (res) {
             cb(res)
         });
     },
-    delete: function (condition, cb) {
-        orm.delete("burgers", condition, function (res) {
-            cb(res);
-        });
-    }
 }
+
+  
 module.exports = burger;
